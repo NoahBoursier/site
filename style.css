@@ -1,16 +1,21 @@
 :root {
-    --offWhite: #F4F1EB;
+    --offWhite: #272521;
+    --White: #121212;
+    --Black: white;
     --hoverColor: #DAC899;
     --darker: #A39A84;
-    --darkText: #5E5A4F; 
+    --darkText: #b4afa4; 
+    --banner: #1D1C1A;
 } 
+
+
+
+/*PURPLE THEME: lavender, #C1AFD5, #9881B4, #6E5F7F */
+/*BROWN THEME: #F4F1EB, #DAC899, #A39A84, #5E5A4F */
 
 html {
   overflow-y: scroll;
 }
-
-/*PURPLE THEME: lavender, #C1AFD5, #9881B4, #6E5F7F */
-/*BROWN THEME: #F4F1EB, #DAC899, #A39A84, #5E5A4F */
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -38,7 +43,7 @@ html {
 
 .top-banner {
     display: flex;
-    background-color: white;
+    background-color: var(--banner);
     color: var(--darkText);
     padding: 10px;
     min-width: 1200px;
@@ -121,6 +126,7 @@ body {
 }
 
 .page {
+    color: var(--Black);
     padding-top: 155px;
     animation: fadeIn .3s ease-in-out;
     display: flex;
@@ -174,26 +180,30 @@ body {
 
 .tag {
     display: inline-block;
-    background-color: #ffffff;
+    background-color: var(--White);
+    color: var(--Black);
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: color 0.3s,
+                background-color 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .tag:hover {
     background-color: var(--hoverColor);
+    color: var(--White);
 }
 
 .tag.selected {
     background-color: var(--darker);
-    color: white;
+    color: var(--Black);
 }
 
 .tag.selected:hover {
     background-color: var(--hoverColor);
+    color: var(--White);
 }
 
 .portfolios-container {
@@ -203,8 +213,8 @@ body {
 .portfolio-item {
     --image-url: url('default-image.jpg');
     background-image: 
-            linear-gradient(to left, white, rgba(255, 255, 255, 0) 50%, white),
-            linear-gradient(to right top, white, rgba(255, 255, 255, 0) 50%, white),
+            linear-gradient(to left, var(--White), rgba(255, 255, 255, 0) 50%, var(--White)),
+            linear-gradient(to right top, var(--White), rgba(255, 255, 255, 0) 50%, var(--White)),
             var(--image-url);
     
             /*linear-gradient(to right top, white, rgba(255, 255, 255, 0) 50%, white),*/
@@ -213,13 +223,14 @@ body {
     background-size: 50%;
     background-repeat: no-repeat;
     filter: grayscale(30%);
+    color: var(--Black);
     
     max-height: 140px;
     min-height: 140px;
     width: 1200px;
     padding: 15px;
     margin: 20px;
-    background-color: white;
+    background-color: var(--White);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     
@@ -297,9 +308,8 @@ body {
     
 .portfolio-item.viewing div.portfolio-item-image {
     width: 700px;
-    height: 400px;
+    height: 500px;
     margin: 3px 0px 0px 10px;
-    background-position: calc(50%) calc(50%);
     background-size: 100%;
     background-repeat: no-repeat;
     background-image: var(--image-url);
