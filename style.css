@@ -1,0 +1,312 @@
+:root {
+    --offWhite: #F4F1EB;
+    --hoverColor: #DAC899;
+    --darker: #A39A84;
+    --darkText: #5E5A4F; 
+} 
+
+html {
+  overflow-y: scroll;
+}
+
+/*PURPLE THEME: lavender, #C1AFD5, #9881B4, #6E5F7F */
+/*BROWN THEME: #F4F1EB, #DAC899, #A39A84, #5E5A4F */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeOutIn {
+    0% { opacity: 1; }
+    10% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOutIn2 {
+    0% { opacity: 1; }
+    10% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.top-banner {
+    display: flex;
+    background-color: white;
+    color: var(--darkText);
+    padding: 10px;
+    min-width: 1200px;
+    position: fixed;
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Span the full width of the viewport */
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    width: 1200px;
+}
+
+.top-banner h1 {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    padding: 3px;
+}
+
+nav a {
+    color: var(--darkText);
+    margin: 0 40px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--hoverColor); /* New background color on hover */
+}
+
+.section-title {
+    background-color: var(--darker);
+    padding: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+
+    padding-top: 65px;
+    position: fixed;
+    top: -100; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Span the full width of the viewport */
+    z-index: 999;
+}
+
+.section-title h1{
+    animation: fadeIn .3s ease-in-out;
+    font-weight: 600;
+}
+
+
+.col {
+    flex: 1;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--offWhite);
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    padding-top: 155px;
+    animation: fadeIn .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center items */
+    align-items: center;
+}
+
+
+
+
+
+
+
+.project-description {
+    position: relative;
+    max-height: 4.8em; /* example for 3 lines of text with 1.6em line-height */
+    overflow: hidden;
+    padding-right: 1em; /* Ensures padding for ellipsis */
+    line-height: 1.6em;
+    text-align: justify;
+}
+
+.project-description::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3px 0 0;
+}
+    
+
+
+
+
+
+
+
+
+.date {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.tag-container {
+    min-width: 1200px;
+    align-items: left;
+    margin: 2px 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tag:hover {
+    background-color: var(--hoverColor);
+}
+
+.tag.selected {
+    background-color: var(--darker);
+    color: white;
+}
+
+.tag.selected:hover {
+    background-color: var(--hoverColor);
+}
+
+.portfolios-container {
+    min-width: 1200px;
+}
+
+.portfolio-item {
+    --image-url: url('default-image.jpg');
+    background-image: 
+            linear-gradient(to left, white, rgba(255, 255, 255, 0) 50%, white),
+            linear-gradient(to right top, white, rgba(255, 255, 255, 0) 50%, white),
+            var(--image-url);
+    
+            /*linear-gradient(to right top, white, rgba(255, 255, 255, 0) 50%, white),*/
+    
+    background-position: calc(50% + 190px);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    filter: grayscale(30%);
+    
+    max-height: 140px;
+    min-height: 140px;
+    width: 1200px;
+    padding: 15px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    
+    cursor: pointer;
+
+    transition: height 0.3s ease,
+                max-height 0.3s ease;    
+}
+
+.portfolio-item:hover {
+    max-height: 220px;
+}
+
+.portfolio-item.viewing {
+    display: flex;
+    max-height: 1000px;
+    background-image: none;
+}
+
+.portfolio-item h3 {
+    margin-top: 0;
+    color: var(--darkText)
+}
+
+
+
+.portfolio-item.viewing div.row {
+    display: flex;
+    align-items: flex-start;
+    width: 1200px;
+}
+
+
+.portfolio-item div.portfolio-item-description {
+    position: relative;
+    max-height: 4.8em; /*  3 lines of text with 1.6em line-height */
+    overflow: hidden;
+    padding-right: 1em; /* Ensures padding for ellipsis */
+    line-height: 1.6em;
+    text-align: justify;
+    width: 460px;
+    transition: max-height 0.3s ease;    
+}
+
+.portfolio-item:hover div.portfolio-item-description {
+    max-height: 11.2em;
+    width: 460px;
+}
+
+.portfolio-item div.portfolio-item-description::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3px 0 0;
+    animation: fadeOutIn2 .3s ease-in-out;
+}
+
+.portfolio-item:hover div.portfolio-item-description::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3px 0 0;
+    animation: fadeOutIn .3s ease-in-out;
+}
+
+.portfolio-item.viewing div.portfolio-item-description {
+    max-height: 100em;
+}
+
+.portfolio-item.viewing div.portfolio-item-description::after {
+    display: none;
+}
+    
+.portfolio-item.viewing div.portfolio-item-image {
+    width: 700px;
+    height: 400px;
+    margin: 3px 0px 0px 10px;
+    background-position: calc(50%) calc(50%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+    opacity: 100%;
+    animation: fadeIn .3s ease-in-out;
+    background-color: var(--offWhite);
+}
+
+
+
