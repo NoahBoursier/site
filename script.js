@@ -56,10 +56,22 @@ function filterPortfolio() {
     document.querySelectorAll('.tag.selected').forEach(tag => {
         selectedTags.add(tag.getAttribute('data-tag'));
     });
+    
+    const selectedTagsA = Array.from(selectedTags)
 
     document.querySelectorAll('.portfolio-item').forEach(item => {
         const itemTags = item.getAttribute('data-tags').split(' ');
+        
+        /* 
+        // INCLUSIVE
         if (itemTags.some(tag => selectedTags.has(tag)) || selectedTags.size === 0) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }*/
+        
+        // EXCLUSIVE
+        if (selectedTagsA.every(tag => itemTags.includes(tag)) || selectedTagsA.size === 0) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
