@@ -299,6 +299,29 @@ body {
     width: 460px;
 }
 
+
+
+.portfolio-item div.portfolio-item-image {
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 20px;
+}
+
+.portfolio-item:hover div.portfolio-item-image {
+    color: rgba(255, 255, 255, .8);
+    
+}
+
+.portfolio-item.viewing:hover div.portfolio-item-image {
+    color: rgba(255, 255, 255, 0);
+}
+
+
+
 .portfolio-item div.portfolio-item-description::after {
     content: "...";
     position: absolute;
