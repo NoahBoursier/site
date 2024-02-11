@@ -116,6 +116,25 @@ nav a:hover {
     flex: 1;
 }
 
+.row-top {
+    display: flex;
+    align-items: flex-start;
+    width: 1200px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+}
+
+
+h2 a {
+    color: var(--Black);
+}
+
+
 
 
 body {
@@ -317,6 +336,5 @@ body {
     animation: fadeIn .3s ease-in-out;
     background-color: var(--offWhite);
 }
-
 
 
